@@ -1,0 +1,41 @@
+{
+  "name": "Alur Manideep",
+
+  "headline": "Software Engineer | AI/ML Engineer | Android & Web Developer",
+
+  "current_status": "B.Tech Computer Science Engineering Student",
+
+  "university": "VIT-AP University",
+
+  "graduation_year": 2026,
+
+  "cgpa": 8.60,
+
+  "summary": "Computer Science undergraduate with hands-on experience building AI systems, computer vision applications, NLP pipelines, Android applications, workflow automations, and full-stack web platforms. Passionate about designing intelligent software systems that combine strong engineering fundamentals with practical real-world impact.",
+
+  "domains": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Natural Language Processing",
+    "Computer Vision",
+    "Generative AI",
+    "Android Development",
+    "Web Development",
+    "Backend Development",
+    "Automation"
+  ],
+
+  "interests": [
+    "LLMs",
+    "Computer Vision",
+    "Android Applications",
+    "Full Stack Development",
+    "AI Agents",
+    "Workflow Automation",
+    "Backend Engineering",
+    "Product Development",
+    "Entrepreneurship"
+  ],
+
+  "career_goal": "To build impactful software and AI-powered products that solve real-world problems and scale into production-grade systems."
+}

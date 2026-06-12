@@ -1,0 +1,102 @@
+[
+  {
+    "name": "OCI 2025 Certified Generative AI Professional",
+    "issuer": "Oracle",
+    "date": "2025-07",
+
+    "priority": 10,
+
+    "domains": [
+      "Generative AI",
+      "LLM",
+      "Artificial Intelligence"
+    ],
+
+    "tags": [
+      "oracle",
+      "oci",
+      "genai",
+      "llm",
+      "prompt engineering",
+      "generative ai"
+    ]
+  },
+
+  {
+    "name": "Oracle Foundations Associate",
+    "issuer": "Oracle",
+    "date": "2025",
+
+    "priority": 8,
+
+    "domains": [
+      "Cloud",
+      "Technology Foundations"
+    ],
+
+    "tags": [
+      "oracle",
+      "cloud",
+      "foundations"
+    ]
+  },
+
+  {
+    "name": "Android App Development",
+    "issuer": "Imarticus Learning",
+    "date": "2024-06",
+
+    "priority": 7,
+
+    "domains": [
+      "Android Development",
+      "Mobile Development"
+    ],
+
+    "tags": [
+      "android",
+      "java",
+      "mobile development",
+      "android studio",
+      "app development"
+    ]
+  },
+
+  {
+    "name": "JavaScript Essentials",
+    "issuer": "Cisco Networking Academy",
+    "date": "2024-05",
+
+    "priority": 6,
+
+    "domains": [
+      "Web Development"
+    ],
+
+    "tags": [
+      "javascript",
+      "frontend",
+      "web development"
+    ]
+  },
+
+  {
+    "name": "Certified Entrepreneur",
+    "issuer": "Wadhwani Foundation",
+    "date": "2024",
+
+    "priority": 6,
+
+    "domains": [
+      "Entrepreneurship",
+      "Innovation"
+    ],
+
+    "tags": [
+      "entrepreneurship",
+      "startup",
+      "innovation",
+      "business"
+    ]
+  }
+]

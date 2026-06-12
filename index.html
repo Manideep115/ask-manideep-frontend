@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask Manideep — AI Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="profile-block">
+        <div class="avatar">M</div>
+        <div class="profile-info">
+          <span class="profile-name">Manideep</span>
+          <span class="profile-role">AI Engineer</span>
+        </div>
+      </div>
+
+      <button class="new-chat-btn" id="newChatBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        New chat
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <p class="nav-label">ASK ABOUT</p>
+      <button class="nav-item" data-query="Tell me about Manideep's projects">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Projects
+      </button>
+      <button class="nav-item" data-query="Tell me about Manideep's experience and background">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Experience
+      </button>
+      <button class="nav-item" data-query="What achievements and awards has Manideep received?">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Achievements
+      </button>
+
+      <p class="nav-label">INFO</p>
+      <button class="nav-item" data-modal="profile">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+        Profile
+      </button>
+      <button class="nav-item" data-modal="education">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Education
+      </button>
+      <button class="nav-item" data-modal="skills">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        Skills
+      </button>
+      <button class="nav-item" data-modal="certifications">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        Certifications
+      </button>
+      <button class="nav-item" data-modal="achievements">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Achievements
+      </button>
+      <button class="nav-item" data-modal="contact">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="sidebar-link" id="resumeBtn" ">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Resume
+      </button>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/manideep-alur-0333b3275" target="_blank" class="social-btn" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/Manideep115" target="_blank" class="social-btn" title="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MOBILE TOGGLE -->
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- MAIN AREA -->
+  <main class="main" id="main">
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="status-dot"></span>
+      <span class="status-text">Assistant Online</span>
+    </div>
+
+    <!-- CHAT CONTAINER -->
+    <div class="chat-container" id="chatContainer">
+
+      <!-- WELCOME SCREEN -->
+      <div class="welcome-screen" id="welcomeScreen">
+        <img src="/assets/manideepimg.jpg" alt="Manideep" class="welcome-avatar" />
+        <h1 class="welcome-title">Hi, I'm Manideep</h1>
+        <p class="welcome-subtitle">AI Engineer building intelligent systems using LLMs, NLP, Computer Vision, and AI Automation.</p>
+      </div>
+
+      <!-- MESSAGES AREA -->
+      <div class="messages-area" id="messagesArea"></div>
+
+    </div>
+
+    <!-- INPUT AREA -->
+    <div class="input-section">
+
+      <!-- SUGGESTED PROMPTS (shown when no messages) -->
+      <div class="suggested-prompts" id="suggestedPrompts">
+        <button class="prompt-chip" data-query="Tell me about your best project">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.66 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h.09l1 8h2l1-8H13l1 8h2l1-8h.91A2 2 0 0 0 22 14v-4a2 2 0 0 0-2-2h-5.66l-2.72-5.45A1 1 0 0 0 10.55 2H9a1 1 0 0 0-1 1v5z"/></svg>
+          Tell me about your best project
+        </button>
+        <button class="prompt-chip" data-query="What AI technologies do you work with?">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          What AI technologies do you work with?
+        </button>
+        <button class="prompt-chip" data-query="Show me your resume summary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Show resume
+        </button>
+        <button class="prompt-chip" data-query="What certifications does Manideep hold?">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Show certifications
+        </button>
+        <button class="prompt-chip" data-query="Tell me about Manideep's experience and education">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          Tell me about your experience
+        </button>
+        <button class="prompt-chip" data-query="How can I contact Manideep?">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact information
+        </button>
+      </div>
+
+      <!-- INPUT BOX -->
+      <div class="input-wrapper">
+        <textarea
+          id="queryInput"
+          class="query-input"
+          placeholder="Ask me anything about my projects, skills, certifications..."
+          rows="1"
+          maxlength="500"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </button>
+      </div>
+
+      <p class="input-footer">AI Assistant powered by Manideep's Knowledge Base</p>
+    </div>
+
+  </main>
+
+  <!-- ============ INFO MODAL ============ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Title</h2>
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div class="modal-loading">Loading…</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

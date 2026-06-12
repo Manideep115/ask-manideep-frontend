@@ -1,0 +1,23 @@
+{
+  "college": {
+    "institution": "VIT-AP University",
+    "location": "Amaravathi, Andhra Pradesh",
+    "degree": "Bachelor of Technology",
+    "branch": "Computer Science and Engineering",
+    "timeline": "2022-2026",
+    "cgpa": 8.60
+  },
+
+  "intermediate": {
+    "institution": "Sri Chaitanya Junior College",
+    "stream": "PCM",
+    "timeline": "2020-2022",
+    "percentage": 93.6
+  },
+
+  "school": {
+    "institution": "A.P. Model School",
+    "timeline": "2020",
+    "percentage": 97.3
+  }
+}

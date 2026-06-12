@@ -1,0 +1,144 @@
+{
+  "programming_languages": [
+    {
+      "name": "Java",
+      "level": "Advanced",
+      "tags": ["oop", "dsa", "backend"]
+    },
+    {
+      "name": "Python",
+      "level": "Advanced",
+      "tags": ["ai", "ml", "automation", "backend"]
+    },
+    {
+      "name": "PHP",
+      "level": "Intermediate",
+      "tags": ["web development", "backend"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "tags": ["frontend", "web development"]
+    }
+  ],
+
+  "web_technologies": [
+    {
+      "name": "HTML",
+      "tags": ["frontend", "web development"]
+    },
+    {
+      "name": "CSS",
+      "tags": ["frontend", "web development"]
+    },
+    {
+      "name": "MySQL",
+      "tags": ["database", "backend"]
+    },
+    {
+      "name": "Firebase",
+      "tags": ["backend", "mobile"]
+    },
+    {
+      "name": "REST APIs",
+      "tags": ["backend", "integration"]
+    }
+  ],
+
+  "mobile_development": [
+    {
+      "name": "Android Studio",
+      "tags": ["android", "mobile development"]
+    },
+    {
+      "name": "XML UI",
+      "tags": ["android", "ui"]
+    },
+    {
+      "name": "Usage Access APIs",
+      "tags": ["android", "system apis"]
+    }
+  ],
+
+  "ai_ml_nlp": [
+    {
+      "name": "YOLOv8",
+      "tags": ["computer vision", "object detection"]
+    },
+    {
+      "name": "OpenCV",
+      "tags": ["computer vision", "image processing"]
+    },
+    {
+      "name": "RAG",
+      "tags": ["llm", "retrieval", "genai"]
+    },
+    {
+      "name": "LLM Finetuning",
+      "tags": ["llm", "genai"]
+    },
+    {
+      "name": "face_recognition",
+      "tags": ["computer vision", "face recognition"]
+    },
+    {
+      "name": "PyTorch",
+      "level": "Basic",
+      "tags": ["deep learning"]
+    },
+    {
+      "name": "CNN",
+      "tags": ["deep learning", "computer vision"]
+    },
+    {
+      "name": "NLTK",
+      "tags": ["nlp", "text processing"]
+    },
+    {
+      "name": "scikit-learn",
+      "tags": ["machine learning"]
+    }
+  ],
+
+  "tools_and_infra": [
+    {
+      "name": "Ollama",
+      "tags": ["llm", "local models"]
+    },
+    {
+      "name": "n8n",
+      "tags": ["automation", "workflow orchestration"]
+    },
+    {
+      "name": "Arduino",
+      "tags": ["iot", "embedded systems"]
+    },
+    {
+      "name": "AWS",
+      "level": "Basic",
+      "tags": ["cloud"]
+    },
+    {
+      "name": "CI/CD",
+      "tags": ["devops"]
+    }
+  ],
+
+  "core_concepts": [
+    "DSA",
+    "OOPS",
+    "DBMS",
+    "Computer Networks",
+    "Operating Systems",
+    "ML Pipelines",
+    "Debugging"
+  ],
+
+  "soft_skills": [
+    "Problem-solving",
+    "Teamwork",
+    "Communication",
+    "Leadership",
+    "Risk-taking"
+  ]
+}
