@@ -15,25 +15,31 @@ async function detectBackend() {
     window.location.hostname === "127.0.0.1";
 
   if (!isLocalFrontend) {
-    CONFIG.API_BASE_URL = RENDER_API;
+    // Already defaults to RENDER_API, just exit
     return;
   }
 
+  // Use AbortController to stop the fetch if it takes more than 1 second
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 1000); 
+
   try {
     const response = await fetch(`${LOCAL_API}/`, {
-      method: "GET"
+      method: "GET",
+      signal: controller.signal // Attaches the timeout
     });
 
     if (response.ok) {
       CONFIG.API_BASE_URL = LOCAL_API;
       console.log("🟢 Using Local Backend");
+      clearTimeout(timeoutId);
       return;
     }
   } catch (e) {
-    console.log("🟡 Local Backend Not Running");
+    console.log("🟡 Local Backend Not Running or Timeout Reached");
   }
 
-  CONFIG.API_BASE_URL = RENDER_API;
+  // No need to re-assign RENDER_API here if it's already the initial value of CONFIG
   console.log("🔵 Using Render Backend");
 }
 
@@ -782,4 +788,8 @@ sidebarOverlay.addEventListener("click", closeSidebar);
       addMessage(msg.role, msg.content, true);
     });
   }
+})();
+(async function initializeApp() {
+  await detectBackend();
+  console.log("Using API:", CONFIG.API_BASE_URL);
 })();
