@@ -2,9 +2,40 @@
 // Ask Manideep — Frontend Application Logic
 // ============================================
 
+const RENDER_API = "https://ask-manideep-backend.onrender.com";
+const LOCAL_API = "http://localhost:8000";
+
 const CONFIG = {
-  API_BASE_URL: "https://ask-manideep-backend.onrender.com"
+  API_BASE_URL: RENDER_API
 };
+
+async function detectBackend() {
+  const isLocalFrontend =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+
+  if (!isLocalFrontend) {
+    CONFIG.API_BASE_URL = RENDER_API;
+    return;
+  }
+
+  try {
+    const response = await fetch(`${LOCAL_API}/`, {
+      method: "GET"
+    });
+
+    if (response.ok) {
+      CONFIG.API_BASE_URL = LOCAL_API;
+      console.log("🟢 Using Local Backend");
+      return;
+    }
+  } catch (e) {
+    console.log("🟡 Local Backend Not Running");
+  }
+
+  CONFIG.API_BASE_URL = RENDER_API;
+  console.log("🔵 Using Render Backend");
+}
 
 // ---- DOM References ----
 const chatContainer = document.getElementById("chatContainer");
