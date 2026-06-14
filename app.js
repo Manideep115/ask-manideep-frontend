@@ -543,7 +543,23 @@ async function renderCertificationsModal() {
   modalBody.innerHTML = `<div class="modal-section">${html}</div>`;
 }
 
+async function renderAchievementsModal() {
+  const achievements = await loadKnowledgeJson("achievements");
 
+  // Map over your achievements data using your beautiful CSS layout
+  const html = achievements.map((ach) => `
+    <div class="achievement-card">
+      <div class="achievement-icon">${ICONS.award}</div>
+      <div class="achievement-info">
+        <div class="achievement-title">${escapeAttr(ach.title)}</div>
+        <div class="achievement-meta">${escapeAttr(ach.issuer)} &middot; ${escapeAttr(ach.date)}</div>
+        ${ach.category ? `<div class="achievement-category">${escapeAttr(ach.category)}</div>` : ''}
+      </div>
+    </div>
+  `).join("");
+
+  modalBody.innerHTML = `<div class="modal-section">${html}</div>`;
+}
 
 async function renderContactModal() {
   const [contact, links] = await Promise.all([
@@ -638,6 +654,7 @@ const MODAL_CONFIG = {
   education: { title: "Education", render: renderEducationModal },
   skills: { title: "Skills & Technologies", render: renderSkillsModal },
   certifications: { title: "Certifications", render: renderCertificationsModal },
+  achievements: { title: "Achievements", render: renderAchievementsModal },
   contact: { title: "Contact", render: renderContactModal },
 };
 
