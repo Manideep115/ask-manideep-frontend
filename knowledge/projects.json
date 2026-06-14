@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Ask Manideep",
+    "category": "AI Portfolio Assistant",
+    "tech": "FastAPI • RAG • Vercel",
+    "year": "2026"
+  },
+  {
+    "title": "LLM Lawyer",
+    "category": "Hybrid GraphRAG Legal Assistant",
+    "tech": "LLM • GraphRAG • NLP",
+    "year": "2026"
+  },
+  {
+    "title": "TOM Resume Engine",
+    "category": "AI Resume Tailoring System",
+    "tech": "LLM • ATS Optimization",
+    "year": "2026"
+  },
+  {
+    "title": "Target Vision",
+    "category": "Head Detection & Recognition",
+    "tech": "YOLOv8 • OpenCV",
+    "year": "2025"
+  },
+  {
+    "title": "Animal Intrusion Detection",
+    "category": "Computer Vision",
+    "tech": "YOLOv8 • Deep Learning",
+    "year": "2025"
+  },
+  {
+    "title": "Cyberbullying Detection",
+    "category": "Natural Language Processing",
+    "tech": "NLTK • ML",
+    "year": "2025"
+  },
+  {
+    "title": "UniFeedback",
+    "category": "Feedback Platform",
+    "tech": "PHP • MySQL",
+    "year": "2024"
+  },
+  {
+    "title": "OneSec Habit Breaker",
+    "category": "Android Application",
+    "tech": "Android Studio",
+    "year": "2024"
+  }
+]

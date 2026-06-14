@@ -1,0 +1,32 @@
+[
+  {
+    "role": "B.Tech Computer Science Student",
+    "organization": "VIT-AP University",
+    "timeline": "2022 - 2026",
+    "domain": "Computer Science"
+  },
+  {
+    "role": "AI & Machine Learning Developer",
+    "organization": "Academic and Personal Projects",
+    "timeline": "2024 - Present",
+    "domain": "AI / ML"
+  },
+  {
+    "role": "Computer Vision Developer",
+    "organization": "YOLO-based Projects",
+    "timeline": "2025 - Present",
+    "domain": "Computer Vision"
+  },
+  {
+    "role": "Android Application Developer",
+    "organization": "Personal Projects",
+    "timeline": "2024 - Present",
+    "domain": "Mobile Development"
+  },
+  {
+    "role": "Workflow Automation Builder",
+    "organization": "n8n Automation Projects",
+    "timeline": "2025 - Present",
+    "domain": "Automation"
+  }
+]

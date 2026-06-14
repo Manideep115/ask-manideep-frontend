@@ -546,19 +546,35 @@ async function renderCertificationsModal() {
 async function renderAchievementsModal() {
   const achievements = await loadKnowledgeJson("achievements");
 
-  // Map over your achievements data using your beautiful CSS layout
-  const html = achievements.map((ach) => `
-    <div class="achievement-card">
-      <div class="achievement-icon">${ICONS.award}</div>
-      <div class="achievement-info">
-        <div class="achievement-title">${escapeAttr(ach.title)}</div>
-        <div class="achievement-meta">${escapeAttr(ach.issuer)} &middot; ${escapeAttr(ach.date)}</div>
-        ${ach.category ? `<div class="achievement-category">${escapeAttr(ach.category)}</div>` : ''}
-      </div>
-    </div>
-  `).join("");
+  const CATEGORY_ICONS = {
+    Programming: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    Entrepreneurship: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.66 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h.09l1 8h2l1-8H13l1 8h2l1-8h.91A2 2 0 0 0 22 14v-4a2 2 0 0 0-2-2h-5.66l-2.72-5.45A1 1 0 0 0 10.55 2H9a1 1 0 0 0-1 1v5z"/></svg>`,
+    Default: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  };
 
-  modalBody.innerHTML = `<div class="modal-section">${html}</div>`;
+  const DESCRIPTIONS = {
+    "Grandmaster Top 1": "Ranked 1st in the 100 Days of Coding Challenge Phase 1 focused on Java programming.",
+    "OOPS Maverick Title": "Recognized for outstanding consistency and performance during Phase 2 of the 100 Days Coding Challenge.",
+    "Global Jury Certificate": "Recognized for the Park Smarter venture concept, business development efforts, and pitch execution.",
+  };
+
+  const html = achievements.map((ach) => {
+    const icon = CATEGORY_ICONS[ach.category] || CATEGORY_ICONS.Default;
+    const desc = DESCRIPTIONS[ach.title] || "";
+    return `
+      <div class="ach-card">
+        <div class="ach-icon">${icon}</div>
+        <div class="ach-info">
+          <div class="ach-title">${escapeAttr(ach.title)}</div>
+          <div class="ach-meta">${escapeAttr(ach.organization)} &middot; ${escapeAttr(ach.year)}</div>
+          ${desc ? `<div class="ach-desc">${escapeAttr(desc)}</div>` : ""}
+          <span class="ach-category-badge">${escapeAttr(ach.category)}</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  modalBody.innerHTML = html;
 }
 
 async function renderContactModal() {
@@ -649,13 +665,93 @@ async function renderContactModal() {
   modalBody.innerHTML = `<div class="contact-list">${rows.join("")}</div>`;
 }
 
+async function renderProjectsModal() {
+  const projects = await loadKnowledgeJson("projects");
+
+  const html = projects.map(project => `
+    <div class="cert-card">
+      <div class="cert-icon">
+        ${ICONS.code}
+      </div>
+
+      <div class="cert-info">
+        <div class="cert-name">
+          ${escapeAttr(project.title)}
+        </div>
+
+        <div class="cert-meta">
+          ${escapeAttr(project.category)}
+          &middot;
+          ${escapeAttr(project.year)}
+        </div>
+
+        <div class="cert-meta" style="margin-top:4px;">
+          ${escapeAttr(project.tech)}
+        </div>
+      </div>
+    </div>
+  `).join("");
+
+  modalBody.innerHTML = html;
+}
+
+async function renderExperienceModal() {
+  const [edu] = await Promise.all([loadKnowledgeJson("education")]);
+  const college = edu.college || {};
+
+  modalBody.innerHTML = `
+    <div class="exp-card">
+      <div class="exp-card-title">B.Tech Computer Science Engineering</div>
+      <div class="exp-card-sub">${escapeAttr(college.institution)} &middot; ${escapeAttr(college.timeline)}</div>
+      <div class="exp-card-body">
+        Graduated with a CGPA of <strong>${escapeAttr(college.cgpa)}</strong> from ${escapeAttr(college.location)}.
+        Specialized in AI/ML, Computer Vision, NLP, Android Development, and Full-Stack Engineering.
+        Completed multiple production-grade projects across diverse technical domains throughout the program.
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-title">AI & Software Project Builder</div>
+      <div class="exp-card-sub">Independent &middot; 2022 – Present</div>
+      <div class="exp-card-body">
+        Built 10+ projects spanning Generative AI, Computer Vision, Android Apps, Automation Pipelines,
+        and Full-Stack Web Platforms. Key highlights include a Hybrid GraphRAG Legal AI Assistant,
+        an AI-powered Resume Tailoring Engine, a Real-Time Face Recognition &amp; Tracking System,
+        and an n8n-based Workflow Automation platform.
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-title">Android App Development — Internship</div>
+      <div class="exp-card-sub">Imarticus Learning &middot; 2024</div>
+      <div class="exp-card-body">
+        Completed a certified internship program focused on Android development.
+        Built a full Movie Recommendation Android application integrating the TMDB REST API
+        as the capstone project, earning a formal certification on completion.
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-title">Certified Entrepreneur</div>
+      <div class="exp-card-sub">Wadhwani Foundation &middot; 2024 – 2025</div>
+      <div class="exp-card-body">
+        Developed and pitched the "Park Smarter" venture concept. Earned a Global Jury Certificate
+        from the Wadhwani Foundation for business development efforts and pitch execution at an
+        international entrepreneurship program.
+      </div>
+    </div>
+  `;
+}
+
 const MODAL_CONFIG = {
-  profile: { title: "Profile", render: renderProfileModal },
-  education: { title: "Education", render: renderEducationModal },
-  skills: { title: "Skills & Technologies", render: renderSkillsModal },
-  certifications: { title: "Certifications", render: renderCertificationsModal },
-  achievements: { title: "Achievements", render: renderAchievementsModal },
-  contact: { title: "Contact", render: renderContactModal },
+  profile:        { title: "Profile",               render: renderProfileModal,        explainQuery: "Give me a detailed professional summary of Manideep — his background, skills, domains, and career goals." },
+  education:      { title: "Education",              render: renderEducationModal,       explainQuery: "Tell me about Manideep's educational background, university, CGPA, and what he studied." },
+  skills:         { title: "Skills & Technologies",  render: renderSkillsModal,         explainQuery: "What skills and technologies does Manideep have? Go into detail about his AI/ML, Android, Web, and automation skills." },
+  certifications: { title: "Certifications",         render: renderCertificationsModal,  explainQuery: "What certifications does Manideep hold? Tell me about each one and what it represents." },
+  achievements:   { title: "Achievements",           render: renderAchievementsModal,    explainQuery: "What are Manideep's notable achievements and awards? Tell me about each one in detail." },
+  projects:       { title: "Projects",               render: renderProjectsModal,        explainQuery: "Give me a complete overview of all of Manideep's projects — what he built, the technologies used, and the impact of each." },
+  experience:     { title: "Experience",             render: renderExperienceModal,      explainQuery: "Tell me about Manideep's experience in detail — his internships, independent projects, and professional background." },
+  contact:        { title: "Contact",                render: renderContactModal,         explainQuery: "How can I contact Manideep? What are the best ways to reach him?" },
 };
 
 let activeModal = null;
@@ -683,6 +779,19 @@ function closeModal() {
   document.body.style.overflow = "";
   activeModal = null;
 }
+
+// ---- Explain More button ----
+const modalExplainBtn = document.getElementById("modalExplainBtn");
+
+modalExplainBtn.addEventListener("click", () => {
+  if (!activeModal) return;
+  const config = MODAL_CONFIG[activeModal];
+  if (!config || !config.explainQuery) return;
+
+  closeModal();
+  queryInput.value = config.explainQuery;
+  handleSend();
+});
 
 modalClose.addEventListener("click", closeModal);
 
