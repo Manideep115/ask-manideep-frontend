@@ -253,19 +253,19 @@ body {
 
 /* ============ WELCOME SCREEN AVATAR ============ */
 .welcome-avatar {
-  width: 180px;
-  height: 180px;
+  width: 100px;
+  height: 100px;
   border-radius: 25%;
   object-fit: cover;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   border: 2px solid var(--border);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
   background: var(--bg-elevated);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 /* Subtly reacts when hovering over the welcome area */
-.welcome-screen:hover .welcome-avatar {
+.welcome-avatar:hover {
   transform: scale(1);
   border-color: var(--text-muted);
 }
@@ -378,7 +378,7 @@ body {
 }
 
 .welcome-subtitle {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.6;
   max-width: 520px;
@@ -485,7 +485,7 @@ body {
   background: var(--bg-elevated);
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 12px;
   font-family: 'SF Mono', Monaco, monospace;
 }
 
@@ -547,7 +547,7 @@ body {
   border-radius: 999px;
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 450;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -900,18 +900,19 @@ body {
   margin-bottom: 18px;
 }
 
-.profile-modal-avatar {
-  width: 54px;
-  height: 54px;
+.avatar {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--accent);
-  color: #0a0a0a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 22px;
+  overflow: hidden;
   flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .profile-modal-name {
